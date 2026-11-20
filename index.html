@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda de ropa básica: prendas esenciales para hombre, mujer y niño.">
+  <title>ESENCIA — Ropa deportiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="top-strip">ROPA DEPORTIVA PARA MOVERTE</div>
+  <header class="site-header">
+    <a class="logo" href="#inicio" aria-label="Esencia, inicio">esencia<span>.</span></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#hombre">Hombre</a>
+      <a href="#mujer">Mujer</a>
+      <a href="#ninos">Niños</a>
+      <a href="#coleccion">Colección</a>
+    </nav>
+    <div class="header-actions">
+      <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Buscar prenda..." aria-label="Buscar prenda"></label>
+      <button class="cart-button" id="cartButton" aria-label="Ver carrito">Bolsa <span id="cartCount">0</span></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">BIENVENIDO A ESENCIA</p>
+        <h1>Todo tipo de<br><em>Prendas</em></h1>
+        <p class="hero-text"></p>
+        <a class="primary-link" href="#coleccion">Ver ropa <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-label="Ilustración de prendas básicas">
+        <div class="art-note">EVERYDAY<br>ESSENTIALS</div>
+        <img class="hero-shirt" src="assets/prenda-01.jpg" alt="Playera deportiva negra">
+        <img class="hero-pants" src="assets/prenda-03.jpg" alt="Jogger deportivo negro">
+        <span class="hero-caption">ESENCIA SPORT</span>
+      </div>
+    </section>
+
+    <section class="category-section" id="coleccion">
+      <div class="section-heading">
+        <div><p class="eyebrow">ENCUENTRA TU ESTILO</p><h2>Compra por sección</h2></div>
+        <p>Escoge la sección que quieras ver.</p>
+      </div>
+      <div class="category-grid">
+        <a class="category-tile tile-men" href="#hombre"><span>01 / COLECCIÓN</span><strong>Hombre</strong><b>Ver prendas ↗</b></a>
+        <a class="category-tile tile-women" href="#mujer"><span>02 / COLECCIÓN</span><strong>Mujer</strong><b>Ver prendas ↗</b></a>
+        <a class="category-tile tile-kids" href="#ninos"><span>03 / COLECCIÓN</span><strong>Niños</strong><b>Ver prendas ↗</b></a>
+      </div>
+    </section>
+
+    <section class="products-section" id="hombre">
+      <div class="section-heading product-heading">
+        <div><p class="eyebrow">01 — PARA ÉL</p><h2>Hombre</h2></div>
+        <a href="#hombre" class="text-link" data-show-all="hombre">Ver todo <span>↗</span></a>
+      </div>
+      <div class="filter-row" data-filter-group="hombre">
+        <button class="filter-chip active" data-filter="todos">Todo</button><button class="filter-chip" data-filter="playeras">Playeras</button><button class="filter-chip" data-filter="sudaderas">Sudaderas</button><button class="filter-chip" data-filter="pantalones">Pantalones</button>
+      </div>
+      <div class="product-grid" id="grid-hombre"></div>
+    </section>
+
+    <section class="products-section alt-section" id="mujer">
+      <div class="section-heading product-heading">
+        <div><p class="eyebrow">02 — PARA ELLA</p><h2>Mujer</h2></div>
+        <a href="#mujer" class="text-link" data-show-all="mujer">Ver todo <span>↗</span></a>
+      </div>
+      <div class="filter-row" data-filter-group="mujer">
+        <button class="filter-chip active" data-filter="todos">Todo</button><button class="filter-chip" data-filter="playeras">Playeras</button><button class="filter-chip" data-filter="tops">Tops</button><button class="filter-chip" data-filter="pantalones">Pantalones</button>
+      </div>
+      <div class="product-grid" id="grid-mujer"></div>
+    </section>
+
+    <section class="products-section" id="ninos">
+      <div class="section-heading product-heading">
+        <div><p class="eyebrow">03 — PARA LOS MÁS PEQUEÑOS</p><h2>Niños</h2></div>
+        <a href="#ninos" class="text-link" data-show-all="ninos">Ver todo <span>↗</span></a>
+      </div>
+      <div class="filter-row" data-filter-group="ninos">
+        <button class="filter-chip active" data-filter="todos">Todo</button><button class="filter-chip" data-filter="playeras">Playeras</button><button class="filter-chip" data-filter="sudaderas">Sudaderas</button><button class="filter-chip" data-filter="pantalones">Pantalones</button>
+      </div>
+      <div class="product-grid" id="grid-ninos"></div>
+    </section>
+
+    <section class="newsletter">
+      <p class="eyebrow">FORMA PARTE DE ESENCIA</p><h2>¡Entérate cuando agreguemos ropa nueva!</h2>
+      <form id="newsletterForm"><input type="email" placeholder="Tu correo electrónico" required aria-label="Tu correo electrónico"><button type="submit">Suscribirme ↗</button></form>
+      <p id="newsletterMessage" class="form-message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
